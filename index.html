@@ -8,6 +8,9 @@
             h1 {
                 color: salmon;
             }
+            h2 {
+                color: dodgerBlue;
+            }
         </style>
     </head>
     <body>
@@ -33,6 +36,8 @@
                 const { students } = this.state;
                 return (
                     <div>
+                        <h1>JUNIOR PHASE</h1>
+                        <h2>Student List</h2>
                         <ul>
                             {
                                 students.map(student => <li key={student.id}><span>{student.firstName}</span><span>{student.lastName}</span></li>)
