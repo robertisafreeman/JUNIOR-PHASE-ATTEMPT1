@@ -1,5 +1,9 @@
 <html>
     <head>
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js'></script>
         <style>
             h1 {
                 color: salmon;
@@ -10,5 +14,35 @@
         <div id="root">
             <h1>JUNIOR PHASE</h1>
         </div>
+        <script type='text/babel'>
+        const { render } = ReactDOM;
+        const { Component } = React;
+        const root = document.querySelector('#root');
+
+        class App extends Component {
+            constructor() {
+                super();
+                this.state = {
+                    students: []
+                }
+            }
+            componentDidMount = async() => {
+                this.setState({students: (await axios.get('/api/students')).data});
+            }
+            render() {
+                const { students } = this.state;
+                return (
+                    <div>
+                        <ul>
+                            {
+                                students.map(student => <li key={student.id}><span>{student.firstName}</span><span>{student.lastName}</span></li>)
+                            }
+                        </ul>
+                    </div>
+                )
+            }
+        }
+        render(<App/>, root)
+        </script>
     </body>
 </html>
