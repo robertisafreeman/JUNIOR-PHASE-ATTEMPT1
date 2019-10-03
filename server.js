@@ -20,6 +20,8 @@ app.get('/api/students', (req, res, next)=> {
         .catch(next);
 });
 
+app.use(express.json())
+
 
 const port = process.env.PORT || 3000;
 db.syncOrSwim()
