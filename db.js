@@ -59,8 +59,8 @@ const Student = conn.define('student', {
     }
 })
 
-// Student.belongsTo(School);
-// School.hasMany(Student);
+Student.belongsTo(School);
+School.hasMany(Student);
 
 const syncOrSwim = async() => {
     await conn.sync({ force: true });
@@ -91,7 +91,7 @@ const syncOrSwim = async() => {
         {firstName: 'Carol', lastName: 'Dundee', gpa: 2.8, schoolId: i.id },
         {firstName: 'Bob', lastName: 'Dundee', gpa: 3.0, schoolId: j.id },
     ]
-    const [ dave, sheryl, ed, kyra, hazel, croc, harvey, maude, carol, bob ] = await Promise.all(students.map(student => Student.create(student)));
+     const [ dave, sheryl, ed, kyra, hazel, croc, harvey, maude, carol, bob ] = await Promise.all(students.map(student => Student.create(student)));
 }
 
 // syncOrSwim()

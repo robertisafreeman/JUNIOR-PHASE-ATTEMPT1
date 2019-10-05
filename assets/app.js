@@ -1,1 +1,111 @@
-!function(e){var t={};function n(r){if(t[r])return t[r].exports;var a=t[r]={i:r,l:!1,exports:{}};return e[r].call(a.exports,a,a.exports,n),a.l=!0,a.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var a in e)n.d(r,a,function(t){return e[t]}.bind(null,a));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){e.exports=n(1)},function(e,t){const{render:n}=ReactDOM,{Component:r}=React,a=document.querySelector("#root");n(React.createElement(class extends r{constructor(){super(),this.state={students:[],schools:[]}}async componentDidMount(){this.setState({students:(await axios.get("/api/students")).data}),this.setState({schools:(await axios.get("/api/schools")).data})}render(){const{students:e,schools:t}=this.state;return React.createElement("div",null,React.createElement("h1",null,"JUNIOR PHASE"),React.createElement("h2",null,"Student List"),React.createElement("ul",null,e.map(e=>React.createElement("li",{key:e.id},React.createElement("span",null,e.firstName)," ",React.createElement("span",null,e.lastName)))),React.createElement("h2",null," School List"),React.createElement("ul",null,t.map(e=>React.createElement("li",{key:e.id},e.name))))}},null),a)}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./meats/app.js":
+/*!**********************!*\
+  !*** ./meats/app.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("const {\n  render\n} = ReactDOM;\nconst {\n  Component\n} = React;\nconst root = document.querySelector('#root');\n\nclass App extends Component {\n  constructor() {\n    super();\n    this.state = {\n      students: [],\n      schools: []\n    };\n  }\n\n  async componentDidMount() {\n    this.setState({\n      students: (await axios.get('/api/students')).data\n    });\n    this.setState({\n      schools: (await axios.get('/api/schools')).data\n    });\n  }\n\n  render() {\n    const {\n      students,\n      schools\n    } = this.state;\n    return React.createElement(\"div\", null, React.createElement(\"h1\", null, \"JUNIOR PHASE PROJECT\"), React.createElement(\"h2\", null, \"Student List\"), React.createElement(\"ul\", null, students.map(student => React.createElement(\"li\", {\n      key: student.id\n    }, React.createElement(\"span\", null, student.firstName), \" \", React.createElement(\"span\", null, student.lastName)))), React.createElement(\"h2\", null, \" School List\"), React.createElement(\"ul\", null, schools.map(school => React.createElement(\"li\", {\n      key: school.id\n    }, school.name))));\n  }\n\n}\n\nrender(React.createElement(App, null), root);\n\n//# sourceURL=webpack:///./meats/app.js?");
+
+/***/ }),
+
+/***/ 0:
+/*!****************************!*\
+  !*** multi ./meats/app.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__(/*! ./meats/app.js */\"./meats/app.js\");\n\n\n//# sourceURL=webpack:///multi_./meats/app.js?");
+
+/***/ })
+
+/******/ });

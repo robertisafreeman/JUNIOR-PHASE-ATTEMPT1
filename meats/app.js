@@ -1,6 +1,5 @@
 const { render } = ReactDOM;
 const { Component } = React;
-const babel = require('@babel/core')
 const root = document.querySelector('#root');
 
 class App extends Component {
@@ -19,7 +18,7 @@ class App extends Component {
         const { students, schools } = this.state;
         return (
             <div>
-                <h1>JUNIOR PHASE</h1>
+                <h1>JUNIOR PHASE PROJECT</h1>
                 <h2>Student List</h2>
                 <ul>
                     {

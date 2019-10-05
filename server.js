@@ -5,10 +5,6 @@ const path = require('path');
 const { School, Student } = db.models;
 const babel = require('@babel/core');
 
-app.get('/', (req, res, next )=> {
-    res.sendFile(path.join(__dirname, 'index.html'))
-});
-
 app.get('/api/schools', (req, res, next)=> {
     School.findAll()
         .then(schools => res.send(schools))
@@ -21,7 +17,11 @@ app.get('/api/students', (req, res, next)=> {
         .catch(next);
 });
 
-app.use('/meats', express.static(path.join(__dirname, 'meats')))
+app.get('/', (req, res, next )=> {
+    res.sendFile(path.join(__dirname, 'index.html'))
+});
+
+app.use('/assets', express.static(path.join(__dirname, 'assets')))
 
 
 const port = process.env.PORT || 3000;
