@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 const { STRING, DECIMAL, UUID, UUIDV4 } = Sequelize;
 
+
 const conn = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost/junior_db');
 
 const uuidDef = {
@@ -9,6 +10,20 @@ const uuidDef = {
     defaultValue: UUIDV4,
     primaryKey: true
 };
+
+// const Nav = ({ school, student }) => {
+//     const links = [
+//         {text: 'Schools', to:'./schools', count: school.length},
+//         {text: 'Students', to:'./students', count: student.length}
+//     ];
+//     return (
+//         <nav>
+//            {
+//                links.map(link => <NavLink key={link.text} to={link.to}>{link.text}</NavLink>)
+//            }
+//         </nav>
+//     )
+// };
 
 const School = conn.define('school', {
     id: uuidDef,

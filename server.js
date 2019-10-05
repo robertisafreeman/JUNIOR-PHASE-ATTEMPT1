@@ -3,6 +3,7 @@ const app = express();
 const db = require('./db');
 const path = require('path');
 const { School, Student } = db.models;
+const babel = require('@babel/core');
 
 app.get('/', (req, res, next )=> {
     res.sendFile(path.join(__dirname, 'index.html'))
@@ -20,8 +21,13 @@ app.get('/api/students', (req, res, next)=> {
         .catch(next);
 });
 
-app.use(express.json())
+// app.get('/', (req, res, next )=> {
+//     res.sendFile(path.join(__dirname, 'index.html'))
+// });
 
+// babel.transformFile('./client/db.js', {presets: ['@babel/react']}, (err, result)=> {
+//     console.log(err, result)
+// })
 
 const port = process.env.PORT || 3000;
 db.syncOrSwim()
