@@ -8,7 +8,7 @@ const uuidDef = {
     type: UUID,
     allowNull: false,
     defaultValue: UUIDV4,
-    primaryKey: true
+    primaryKey: true,
 };
 
 // const Nav = ({ school, student }) => {
@@ -59,8 +59,8 @@ const Student = conn.define('student', {
     }
 })
 
-Student.belongsTo(School);
-School.hasMany(Student);
+// Student.belongsTo(School);
+// School.hasMany(Student);
 
 const syncOrSwim = async() => {
     await conn.sync({ force: true });

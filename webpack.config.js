@@ -1,16 +1,16 @@
 const path = require('path');
 
-module.exports={
-  entry: './client/db.js',
+module.exports = {
+  entry: ['./meats/app.js'],
   output: {
-    filename: 'app.js',
-    path: path.join(__dirname, 'assets')
+      filename: 'app.js',
+      path: path.join(__dirname, 'assets')
   },
   module: {
-    rules: {
-      test: /\.js/,
+    rules: [{
+      test: /\.js$/,
       loader: 'babel-loader',
       exclude: /node_modules/
-    }
+    }]
   }
 }

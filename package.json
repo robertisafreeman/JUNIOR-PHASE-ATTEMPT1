@@ -6,7 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon server.js --ignore assets/",
-    "webpack": "webpack"
+    "webpack": "webpack --watch"
+  },
+  "babel": {
+    "presets": [
+      "@babel/react"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -14,8 +19,12 @@
   "dependencies": {
     "@babel/core": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
     "express": "^4.17.1",
     "pg": "^7.12.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-router-dom": "^5.1.2",
     "sequelize": "^5.19.2"
   },
   "devDependencies": {
