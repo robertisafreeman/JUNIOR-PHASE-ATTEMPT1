@@ -21,13 +21,8 @@ app.get('/api/students', (req, res, next)=> {
         .catch(next);
 });
 
-// app.get('/', (req, res, next )=> {
-//     res.sendFile(path.join(__dirname, 'index.html'))
-// });
+app.use('/meats', express.static(path.join(__dirname, 'meats')))
 
-// babel.transformFile('./client/db.js', {presets: ['@babel/react']}, (err, result)=> {
-//     console.log(err, result)
-// })
 
 const port = process.env.PORT || 3000;
 db.syncOrSwim()
