@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "npm run webpack:dev && nodemon server.js --ignore assets/ --ignore meats/",
     "webpack": "webpack",
-    "webpack:dev": "npm run webpack -- --watch --mode=development"
+    "webpack:dev": "npm run webpack --watch --mode=development"
   },
   "babel": {
     "presets": [
@@ -23,6 +23,8 @@
     "babel-loader": "^8.0.6",
     "express": "^4.17.1",
     "pg": "^7.12.1",
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.4",
     "sequelize": "^5.19.2"
   },
   "devDependencies": {
