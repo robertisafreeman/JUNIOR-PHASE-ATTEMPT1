@@ -1,6 +1,6 @@
 import { combineReducers, createStore } from 'redux';
-
 const ADD_STUDENT = 'ADD_STUDENT'
+
 const studentsReducer = ( state= [], action )=>{
     if(action.type === 'SET_STUDENTS') {
         state = action.students;

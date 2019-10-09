@@ -16,10 +16,9 @@ const _Home = ({students}) => <div>
     <hr/>
     </div>
 ;
-const Home = connect(({students})=> {
-    return {
-        students
-    }
-})(_Home);
+
+const mapStateToProps = ({students, schools}) => ({students, schools});
+
+const Home = connect(mapStateToProps)(_Home);
 
 export default Home;

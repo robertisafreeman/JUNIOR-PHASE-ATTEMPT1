@@ -6,10 +6,8 @@ const _Students = ({ students }) =>
     <hr/>
 </div>
 ;
-const Students = connect(({students})=> {
-    return {
-        students
-    }
-})(_Students);
+const mapStateToProps = ({students}) => ({students});
+
+const Students = connect(mapStateToProps)(_Students)
 
 export default Students;
