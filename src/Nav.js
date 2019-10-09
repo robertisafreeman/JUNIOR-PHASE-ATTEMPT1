@@ -8,16 +8,16 @@ const _Nav = ({count, location}) => {
     return (
         <nav>
             <Link to='/'>Home</Link>
-            <Link to='/api/students'>Students()</Link>
-            <Link to='/api/schools'>Schools()</Link>
+            <Link to='/students'>Students()</Link>
+            <Link to='/schools'>Schools()</Link>
         </nav>
     )
 };
 
-const Nav = connect(({ students, schools }) => {
+const Nav = connect(({ Students, Schools }) => {
     return {
-        students: students,
-        schools: schools
+        students: Students,
+        schools: Schools
     }
 })(_Nav);
 

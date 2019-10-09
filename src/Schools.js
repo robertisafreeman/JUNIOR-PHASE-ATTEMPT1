@@ -1,14 +1,33 @@
+import React from 'react'
 import { connect } from 'react-redux';
+import { setStudents } from '../store';
 
-const _Schools = ({ schools }) => 
-<div>
-    Schools - there are { schools.length } students!
-    <hr/>
-</div>
-;
+class _Schools extends React.Component{
+    constructor(){
+        super();
+    }
+    componentDidMount(){
+        this.props.getSchools()
+    }
+    render(){
+        console.log(schools);
+        return(
+            <div>
+                Schools - there are { schools.length } students!
+                <hr/>
+            </div>
+        )
+    }
+}
 
 const mapStateToProps = ({ schools }) => ({schools});
 
-const Schools = connect(mapStateToProps)(_Schools)
+const mapDispatchToProps = dispatch => {
+    return {
+        getStudents: () => dispatch(setStudentsThunk())
+    }
+}
+
+const Schools = connect(mapStateToProps, mapDispatchToProps)(_Schools);
 
 export default Schools;
