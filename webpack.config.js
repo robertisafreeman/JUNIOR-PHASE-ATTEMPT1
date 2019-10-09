@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: ['./meats/app.js'],
+  entry: ['./src/index.js'],
   output: {
       filename: 'app.js',
       path: path.join(__dirname, 'assets')
