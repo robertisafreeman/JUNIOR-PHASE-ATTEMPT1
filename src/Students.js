@@ -5,6 +5,11 @@ const _Students = ({ students }) =>
 <div>
     Students - there are { students.length } students!
     <hr/>
+    <ul>
+        {
+            students.map(student => <li key={student.id}>{student.firstName}</li>)
+        }
+    </ul>
 </div>
 ;
 const mapStateToProps = ({students}) => ({students});

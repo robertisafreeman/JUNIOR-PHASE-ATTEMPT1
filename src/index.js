@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-import { HashRouter, Link, Route } from "react-router-dom";
-import { Provider, connect} from "react-redux";
-import { combineReducers, createStore } from "redux";
+import { HashRouter, Route } from "react-router-dom";
+import { Provider} from "react-redux";
+
 import Nav from './Nav';
 import Home from './Home';
 import Students from './Students';
