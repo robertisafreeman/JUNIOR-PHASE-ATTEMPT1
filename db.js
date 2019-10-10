@@ -11,20 +11,6 @@ const uuidDef = {
     primaryKey: true,
 };
 
-// const Nav = ({ school, student }) => {
-//     const links = [
-//         {text: 'Schools', to:'./schools', count: school.length},
-//         {text: 'Students', to:'./students', count: student.length}
-//     ];
-//     return (
-//         <nav>
-//            {
-//                links.map(link => <NavLink key={link.text} to={link.to}>{link.text}</NavLink>)
-//            }
-//         </nav>
-//     )
-// };
-
 const School = conn.define('school', {
     id: uuidDef,
     name:{
